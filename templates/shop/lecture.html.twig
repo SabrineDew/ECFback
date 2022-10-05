@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{produit.nom}} | {{parent()}}{% endblock %}
+
+{% block content %}
+
+<div class="card" style="width: 18rem;">
+ <img src="{{produit.image}}" alt="{{produit.image}}">
+  <div class="card-body">{{produit.nom}}</div>
+    <form method="post" action="">
+    <div class="row my-3">
+    <div class="col-3">
+    <input type="number" name="quantité" class="form-control" id="quantity" value="1">
+    <input type="hidden" name="produit" value="{{produit.id}}">
+    </div>
+    <div class="col">
+    <input type="submit" value="Ajouter au panier" name="ajout" class="btn btn-success">
+    </div>
+    </div>
+    </form>
+
+{% endblock %}
